@@ -47,3 +47,25 @@ values_dict = {'Two': 2,
                }
 
 playing = True
+
+
+class Card():
+
+    def __init(self, suit, rank):
+        self.suit = suit
+        self.rank = rank
+
+    def __str__(self):
+        return ("{} of {}.").format(self.rank, self.suit)
+
+
+class Deck():
+
+    def __init(self,):
+        pass
+
+
+class Hand():
+
+    def __init(self,):
+        pass
