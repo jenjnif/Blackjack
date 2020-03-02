@@ -55,7 +55,7 @@ playing = True
 
 class Card():
 
-    def __init(self, suit, rank):
+    def __init__(self, suit, rank):
         self.suit = suit
         self.rank = rank
 
@@ -65,14 +65,17 @@ class Card():
 
 class Deck():
 
-    def __init(self, deck):
+    def __init__(self):
         self.deck = []
         for suit in suits:
             for rank in ranks:
-                self.deck.append(rank + " of " + suit)
+                self.deck.append(Card(suit, rank))
 
-        def __str__(self):
-            return ("Deck is {}.").format(self.deck)
+    def __str__(self):
+        deck_comp = ""
+        for card in self.deck:
+            deck_comp += "\n"+card.__str__()
+        return ("The deck has: {}").format(deck_comp)
 
 
 class Hand():
@@ -81,4 +84,5 @@ class Hand():
         pass
 
 
-deck = Deck()
+new_deck = Deck()
+print(new_deck)
