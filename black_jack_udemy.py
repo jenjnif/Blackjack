@@ -77,6 +77,15 @@ class Deck():
             deck_comp += "\n"+card.__str__()
         return ("The deck has: {}").format(deck_comp)
 
+    # shuffles list in place
+    def shuffle(self):
+        random.shuffle(self.deck)
+
+    def deal(self):
+        # returns a single card from the list
+        single_card = self.deck.pop()
+        return single_card
+
 
 class Hand():
 
@@ -85,4 +94,5 @@ class Hand():
 
 
 new_deck = Deck()
+new_deck.shuffle()
 print(new_deck)
