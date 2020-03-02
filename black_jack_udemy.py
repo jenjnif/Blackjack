@@ -28,16 +28,19 @@ Remember to you are free to use any resources you want and as always:
 variables to store a list of suits, ranks, and then use a dictionary
 to map ranks to values.
 '''
-
-suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs']
+# suits is a tuple with the four suits
+suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
+# ranks is a list of card ranks
 ranks = ['Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace']
+# finally a value dictionary where you can pass in a cards rank
+# and returns it's numerical value
 values_dict = {'Two': 2,
                'Three': 3,
                'Four': 4,
                'Five': 5,
                'Six': 6,
                'Seven': 7,
-               'Eight': 8,
+               'sEight': 8,
                'Nine': 9,
                'Ten': 10,
                'Jack': 10,
@@ -46,6 +49,7 @@ values_dict = {'Two': 2,
                'Ace': 11,
                }
 
+# declare a boolean value to used to control the while loop
 playing = True
 
 
@@ -61,11 +65,20 @@ class Card():
 
 class Deck():
 
-    def __init(self,):
-        pass
+    def __init(self, deck):
+        self.deck = []
+        for suit in suits:
+            for rank in ranks:
+                self.deck.append(rank + " of " + suit)
+
+        def __str__(self):
+            return ("Deck is {}.").format(self.deck)
 
 
 class Hand():
 
     def __init(self,):
         pass
+
+
+deck = Deck()
