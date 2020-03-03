@@ -164,6 +164,31 @@ def hit_or_stand(deck, hand):
         break
 
 
+def player_busts(player, dealer, chips):
+    print("Bust player.")
+    chips.lose_bet()
+
+
+def player_wins(player, dealer, chips):
+    print("Player wins.")
+    chips.win_bet()
+
+
+def dealer_busts(player, dealer, chips):
+    print("Player wins. Dealer busted.")
+    chips.win_bet()
+
+
+def dealer_wins(player, dealer, chips):
+    print("Dealer wins.")
+    chips.lose_bet()
+
+
+# both player and dealer got 21
+def push(player):
+    print("Dealer and player tie! Push.")
+
+
 new_deck = Deck()
 new_deck.shuffle()
 print(new_deck)
