@@ -148,6 +148,22 @@ def hit(deck, hand):
     hand.adjust_for_ace()
 
 
+def hit_or_stand(deck, hand):
+    global playing # bringing in the global variable created earlier to control while loop
+
+    while True:
+        x = input("Hit or Stand? Enter h or s.")
+        if x[0].lower() == 'h':
+            hit(deck, hand)
+        elif x[0].lower() == 's':
+            print("Player stands dealer's turn")
+            playing = False
+        else:
+            print("Sorry, I did not understand that, please enter h or s only.")
+            continue
+        break
+
+
 new_deck = Deck()
 new_deck.shuffle()
 print(new_deck)
