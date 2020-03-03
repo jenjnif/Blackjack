@@ -40,7 +40,7 @@ values_dict = {'Two': 2,
                'Five': 5,
                'Six': 6,
                'Seven': 7,
-               'sEight': 8,
+               'Eight': 8,
                'Nine': 9,
                'Ten': 10,
                'Jack': 10,
@@ -87,12 +87,25 @@ class Deck():
         return single_card
 
 
+# this will represent which cards are ins someones hand
 class Hand():
 
-    def __init(self,):
+    def __init__(self):
+        self.cards = []
+        self.value = 0
+        self.aces = 0  # add an attribute to keep track of aces
+
+    def add_card(self, single_card):
+        # single card passed in from Deck.deal()
+        self.cards.append(single_card)
+        # add value from dict to values
+        self.value += values_dict[single_card.rank]
+
+    def adjust_for_ace(self):
         pass
 
 
 new_deck = Deck()
-new_deck.shuffle()
-print(new_deck)
+print(f'single card is {new_deck.deal()}')
+
+# print(new_deck)
