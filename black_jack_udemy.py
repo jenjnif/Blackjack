@@ -164,6 +164,28 @@ def hit_or_stand(deck, hand):
         break
 
 
+# functions to display cards
+def show_some(player, dealer):
+    print("Dealers hand:")
+    print("one card hidden")
+    print(dealer.cards[1])
+    print("\n")
+    print("Players hand:")
+    for card in player.cards:
+        print(card)
+
+
+def show_all(player, dealer):
+    print("Dealers hand:")
+    for card in dealer.cards:
+        print(card)
+    print("\n")
+    print("Players hand:")
+    for card in player.cards:
+        print(card)
+
+
+# functions to display end of game scenarios
 def player_busts(player, dealer, chips):
     print("Bust player.")
     chips.lose_bet()
@@ -189,9 +211,12 @@ def push(player):
     print("Dealer and player tie! Push.")
 
 
-new_deck = Deck()
-new_deck.shuffle()
-print(new_deck)
-print(f'single card is {new_deck.deal()}')
+# run the logic of the game
 
+
+
+
+# new_deck = Deck()
+# new_deck.shuffle()
 # print(new_deck)
+# print(f'single card is {new_deck.deal()}')
