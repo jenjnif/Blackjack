@@ -101,11 +101,22 @@ class Hand():
         # add value from dict to values
         self.value += values_dict[single_card.rank]
 
+        # track aces
+        if single_card.rank == "Ace":
+            self.aces += 1
+
     def adjust_for_ace(self):
-        pass
+        # will assume that first ace is 11
+        # if total value > 21 and I still have an ace
+        # then change my ace to be a 1 instead of an 11
+        while self.value > 21 and self.aces:
+            self.value -= 10
+            self.aces -= 1
 
 
 new_deck = Deck()
+new_deck.shuffle()
+print(new_deck)
 print(f'single card is {new_deck.deal()}')
 
 # print(new_deck)
