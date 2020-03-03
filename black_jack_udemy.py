@@ -141,6 +141,13 @@ def take_bet(chips):
                 break
 
 
+def hit(deck, hand):
+
+    single_card = deck.deal()
+    hand.add_card(single_card)
+    hand.adjust_for_ace()
+
+
 new_deck = Deck()
 new_deck.shuffle()
 print(new_deck)
